@@ -52,11 +52,11 @@ def get_park(current_user_token, id):
 def update_park(current_user_token, id):
     park = Park.query.get(id)
 
-    park.brand = request.json['brand']
-    park.age = request.json['age']
-    park.rating = request.json['rating']
-    park.flavor = request.json['flavor']
-    park.price = request.json['price']
+    park.park_name = request.json['park_name']
+    park.state = request.json['state']
+    park.founded = request.json['founded']
+    park.popularity = request.json['popularity']
+    park.beauty = request.json['beauty']
     park.user_token = current_user_token.token
 
     db.session.commit()
